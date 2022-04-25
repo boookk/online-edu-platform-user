@@ -3,7 +3,7 @@
 <details>
   <summary>
     <code>POST</code> 
-    <code><b>/users</b></code> 
+    <code><b>/users/register</b></code> 
     <code>(강사회원 생성)</code>
   </summary>
 

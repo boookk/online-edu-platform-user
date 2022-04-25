@@ -1,4 +1,4 @@
-package com.example.onlineeduplatformuser.domain;
+package com.example.onlineeduplatformuser.model;
 
 public class User {
 

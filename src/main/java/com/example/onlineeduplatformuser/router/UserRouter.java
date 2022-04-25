@@ -1,4 +1,4 @@
-package com.example.onlineeduplatformuser.controller;
+package com.example.onlineeduplatformuser.router;
 
 import com.example.onlineeduplatformuser.handler.UserHandler;
 import org.springframework.context.annotation.Bean;
@@ -10,12 +10,12 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 
 @Configuration
 @EnableWebFlux
-public class UserController {
+public class UserRouter {
 
     @Bean
-    public RouterFunction<ServerResponse> UserRouter(UserHandler userHandler) {
+    public RouterFunction<ServerResponse> userRouter(UserHandler userHandler) {
         return RouterFunctions.route()
-                .POST("/user", userHandler::createTeacher)
+                .POST("/user/register", userHandler::register)
                 .POST("/user/join", userHandler::join)
                 .POST("/user/login", userHandler::login)
                 .build();

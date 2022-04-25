@@ -1,7 +1,7 @@
-package com.example.onlineeduplatformuser.domain;
+package com.example.onlineeduplatformuser.model;
 
 public enum UserType {
-    STUDENT(1), TEACHER(2), ADVISOR(0);
+    STUDENT(1), TEACHER(2), ADVISOR(9);
 
     UserType(int typeValue) {
         this.value = typeValue;
