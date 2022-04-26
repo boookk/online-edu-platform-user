@@ -33,43 +33,44 @@ public class User {
     @Column("phone")
     private String phone;
 
-//    public User(int userId, int userType, String name, String email, String password, String address,
-//                String phone) {
-//        this.userId = userId;
-//        this.userType = userType;
-//        this.name = name;
-//        this.email = email;
-//        this.password = password;
-//        this.address = address;
-//        this.phone = phone;
-//    }
-//
-//    public int getUserId() {
-//        return userId;
-//    }
-//
-//    public int getUserType() {
-//        return userType;
-//    }
-//
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public String getEmail() {
-//        return email;
-//    }
-//
-//    public String getPassword() {
-//        return password;
-//    }
-//
-//    public String getAddress() {
-//        return address;
-//    }
-//
-//    public String getPhone() {
-//        return phone;
-//    }
+    // public User(int userId, int userType, String name, String email, String
+    // password, String address,
+    // String phone) {
+    // this.userId = userId;
+    // this.userType = userType;
+    // this.name = name;
+    // this.email = email;
+    // this.password = password;
+    // this.address = address;
+    // this.phone = phone;
+    // }
+    //
+    // public int getUserId() {
+    // return userId;
+    // }
+    //
+    // public int getUserType() {
+    // return userType;
+    // }
+    //
+    // public String getName() {
+    // return name;
+    // }
+    //
+    // public String getEmail() {
+    // return email;
+    // }
+    //
+    // public String getPassword() {
+    // return password;
+    // }
+    //
+    // public String getAddress() {
+    // return address;
+    // }
+    //
+    // public String getPhone() {
+    // return phone;
+    // }
 
 }
