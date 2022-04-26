@@ -1,5 +1,6 @@
 package com.example.onlineeduplatformuser.handler;
 
+import com.example.onlineeduplatformuser.dto.UserDto;
 import com.example.onlineeduplatformuser.dto.UserRegistrationResponse;
 import com.example.onlineeduplatformuser.model.User;
 import com.example.onlineeduplatformuser.model.UserType;
@@ -17,9 +18,9 @@ import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import org.springframework.web.server.ServerWebInputException;
 import reactor.core.publisher.Mono;
-import reactor.core.scheduler.Schedulers;
 
-import java.time.Duration;
+import java.util.Random;
+import java.util.concurrent.atomic.AtomicReference;
 
 import static org.springframework.web.reactive.function.server.ServerResponse.ok;
 
@@ -33,26 +34,30 @@ public class UserHandler {
     private final UserRepository userRepository;
     private final ObjectMapper objectMapper;
 
-    public Mono<ServerResponse> register(ServerRequest request) {
-        return ok()
-                .contentType(MediaType.APPLICATION_JSON)
-                .bodyValue("Test");
-    }
 
-    public Mono<ServerResponse> getAll(ServerRequest serverRequest) {
-        return ok().body(userRepository.findAll(), UserRegistrationResponse.class).log();
-    }
-
-    public Mono<ServerResponse> join(ServerRequest request) {
-        Mono<User> response = request.bodyToMono(User.class).doOnNext(this::validate);
-        return response
+    // 강사 등록
+   public Mono<ServerResponse> register(ServerRequest request) {
+        Mono<UserDto> userDto = request.bodyToMono(UserDto.class).doOnNext(this::validate);
+        return userDto
                 .flatMap(user -> {
-                    user.setUserType(UserType.STUDENT.getValue());
-                    user.setUserId(userRepository.findByLastId());
+                    user.setUserType(UserType.TEACHER.getValue());
                     return ok().body(userRepository.save(objectMapper.convertValue(user, User.class)), UserRegistrationResponse.class);
                 })
                 .log();
     }
+    
+
+    // 학생 등록
+    public Mono<ServerResponse> join(ServerRequest request) {
+        Mono<UserDto> userDto = request.bodyToMono(UserDto.class).doOnNext(this::validate);
+        return userDto
+                .flatMap(user -> {
+                    user.setUserType(UserType.STUDENT.getValue());
+                    return ok().body(userRepository.save(objectMapper.convertValue(user, User.class)), UserRegistrationResponse.class);
+                })
+                .log();
+    }
+
 
     private void validate(Object object) {
         Errors errors = new BeanPropertyBindingResult(object, object.getClass().getName());
@@ -61,6 +66,7 @@ public class UserHandler {
             throw new ServerWebInputException(errors.toString());
         }
     }
+
 
 //    Mono<ServerResponse> login(ServerRequest serverRequest);
 }

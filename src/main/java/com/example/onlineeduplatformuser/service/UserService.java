@@ -10,13 +10,6 @@ import reactor.core.publisher.Mono;
 import java.util.Map;
 
 public interface UserService {
-
-    // 학생 등록
-    Mono<User> registrationStudent(User user);
-
-//    Mono<User> registrationStudent(ServerRequest request);
-
-
 //    UserRegistrationResponse registrationTeacher(ServerRequest serverRequest);
 //
 //    UserRegistrationResponse registrationStudent(ServerRequest serverRequest);

@@ -7,8 +7,4 @@ import org.springframework.stereotype.Component;
 
 @Component
 public interface UserRepository extends ReactiveCrudRepository<User, Long> {
-
-
-    @Query("SELECT MAX(userId) FROM user")
-    int findByLastId();
 }
