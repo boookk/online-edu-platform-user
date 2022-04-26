@@ -1,10 +1,11 @@
 package com.example.onlineeduplatformuser.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.*;
 
-@Getter
+@Data
+@Builder
 @AllArgsConstructor
+@NoArgsConstructor
 public class UserRegistrationResponse {
 
     private int userId;

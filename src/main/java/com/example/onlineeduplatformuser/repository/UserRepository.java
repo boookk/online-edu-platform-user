@@ -10,5 +10,5 @@ public interface UserRepository extends ReactiveCrudRepository<User, Long> {
 
 
     @Query("SELECT MAX(userId) FROM user")
-    Integer findByLastId();
+    int findByLastId();
 }

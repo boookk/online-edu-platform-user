@@ -6,32 +6,30 @@ import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 @Table
-@Setter
-@ToString
-@Builder
+@Data
+@NoArgsConstructor
 @AllArgsConstructor
 public class User {
 
     @Id
-    @Column("userId")
     private int userId;
 
-    @Column("userType")
+    @Column
     private int userType;
 
-    @Column("name")
+    @Column
     private String name;
 
-    @Column("email")
+    @Column
     private String email;
 
-    @Column("password")
+    @Column
     private String password;
 
-    @Column("address")
+    @Column
     private String address;
 
-    @Column("phone")
+    @Column
     private String phone;
 
 //    public User(int userId, int userType, String name, String email, String password, String address,
@@ -44,33 +42,33 @@ public class User {
 //        this.address = address;
 //        this.phone = phone;
 //    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public int getUserType() {
-        return userType;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
+//
+//    public int getUserId() {
+//        return userId;
+//    }
+//
+//    public int getUserType() {
+//        return userType;
+//    }
+//
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public String getEmail() {
+//        return email;
+//    }
+//
+//    public String getPassword() {
+//        return password;
+//    }
+//
+//    public String getAddress() {
+//        return address;
+//    }
+//
+//    public String getPhone() {
+//        return phone;
+//    }
 
 }
