@@ -1,23 +1,49 @@
 package com.example.onlineeduplatformuser.model;
 
+import lombok.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.Table;
+
+@Table
+@Setter
+@ToString
+@Builder
+@AllArgsConstructor
 public class User {
 
-    private final int userId;
-    private final int userType;
-    private final String name;
-    private final String email;
-    private final String address;
-    private final String phone;
+    @Id
+    @Column("userId")
+    private int userId;
 
-    public User(int userId, int userType, String name, String email, String address,
-            String phone) {
-        this.userId = userId;
-        this.userType = userType;
-        this.name = name;
-        this.email = email;
-        this.address = address;
-        this.phone = phone;
-    }
+    @Column("userType")
+    private int userType;
+
+    @Column("name")
+    private String name;
+
+    @Column("email")
+    private String email;
+
+    @Column("password")
+    private String password;
+
+    @Column("address")
+    private String address;
+
+    @Column("phone")
+    private String phone;
+
+//    public User(int userId, int userType, String name, String email, String password, String address,
+//                String phone) {
+//        this.userId = userId;
+//        this.userType = userType;
+//        this.name = name;
+//        this.email = email;
+//        this.password = password;
+//        this.address = address;
+//        this.phone = phone;
+//    }
 
     public int getUserId() {
         return userId;
@@ -33,6 +59,10 @@ public class User {
 
     public String getEmail() {
         return email;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     public String getAddress() {

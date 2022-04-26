@@ -13,11 +13,11 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 public class UserRouter {
 
     @Bean
-    public RouterFunction<ServerResponse> userRouter(UserHandler userHandler) {
+    public RouterFunction<ServerResponse> router(UserHandler userHandler) {
         return RouterFunctions.route()
                 .POST("/user/register", userHandler::register)
                 .POST("/user/join", userHandler::join)
-                .POST("/user/login", userHandler::login)
+//                .POST("/user/login", userHandler::login)
                 .build();
     }
 }
