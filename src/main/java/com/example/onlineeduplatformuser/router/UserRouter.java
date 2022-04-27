@@ -15,9 +15,9 @@ public class UserRouter {
     @Bean
     public RouterFunction<ServerResponse> router(UserHandler userHandler) {
         return RouterFunctions.route()
-                .POST("/user/register", userHandler::register)
-                .POST("/user/join", userHandler::join)
-                .POST("/user/login", userHandler::login)
+                .POST("/users/register", userHandler::register)
+                .POST("/users/join", userHandler::join)
+                .POST("/users/login", userHandler::login)
                 .build();
     }
 }
