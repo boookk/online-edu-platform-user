@@ -18,6 +18,8 @@
 > |--------|------------|----------------|---|
 > | `name` |  String  | 이름     | O |
 > | `email` |  String  | 이메일     | O |
+> | `password` | String | 비밀번호 | O |
+> | `email` |  String  | 이메일     | O |
 > | `address` |  String  | 주소     |  |
 > | `phone` |  String  | 전화번호     |  |
 
@@ -44,6 +46,7 @@
 > |--------|------------|----------------|---|
 > | `name` |  String  | 이름     | O |
 > | `email` |  String  | 이메일     | O |
+> | `password` | String | 비밀번호 | O |
 > | `address` |  String  | 주소     |  |
 > | `phone` |  String  | 전화번호     |  |
 
