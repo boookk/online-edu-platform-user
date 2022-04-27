@@ -48,7 +48,7 @@ public class UserHandler {
         Mono<UserDto> userDto = request.bodyToMono(UserDto.class).doOnNext(this::validate);
         return userDto
                 .flatMap(user -> {
-                    user.setUserType(String.valueOf(UserType.TEACHER));
+                    user.setUserType(String.valueOf(UserType.LECTURE));
                     return ok().body(userRepository.save(objectMapper.convertValue(user, User.class)),
                             UserRegistrationResponse.class);
                 })
@@ -60,7 +60,7 @@ public class UserHandler {
         Mono<UserDto> userDto = request.bodyToMono(UserDto.class).doOnNext(this::validate);
         return userDto
                 .flatMap(user -> {
-                    user.setUserType(String.valueOf(UserType.STUDENT));
+                    user.setUserType(String.valueOf(UserType.USER));
                     return ok().body(userRepository.save(objectMapper.convertValue(user, User.class)),
                             UserRegistrationResponse.class);
                 })
