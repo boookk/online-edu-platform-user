@@ -17,7 +17,7 @@ public class UserRouter {
         return RouterFunctions.route()
                 .POST("/user/register", userHandler::register)
                 .POST("/user/join", userHandler::join)
-//                .POST("/user/login", userHandler::login)
+                .POST("/user/login", userHandler::login)
                 .build();
     }
 }

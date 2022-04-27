@@ -21,5 +21,3 @@ logging:
     org:
       springframework:
         r2dbc: DEBUG
-
-

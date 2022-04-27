@@ -12,5 +12,6 @@ CREATE TABLE user (
 
 
 INSERT INTO user VALUES (1, 9, '김코드', '김코드@코드.com', 'password', 'address', '010-0000-0000');
+INSERT INTO user VALUES (2, 1, 'ss', 'ss@ss.com', 'password', 'address', '01000000000');
 --INSERT INTO user VALUES (45, 2, '왕코드', '왕코드@google.com', 'password', 'address', '010-0000-0000');
 --INSERT INTO user VALUES (873153, 9, '금코드', '금코드@google.com', 'password', 'address', '010-0000-0000');
