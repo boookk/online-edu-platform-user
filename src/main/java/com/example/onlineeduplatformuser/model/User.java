@@ -16,7 +16,7 @@ public class User {
     private Long userId;
 
     @Column("userType")
-    private int userType;
+    private String  userType;
 
     @Column("name")
     private String name;

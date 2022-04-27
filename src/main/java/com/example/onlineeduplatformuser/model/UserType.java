@@ -4,12 +4,12 @@ public enum UserType {
     STUDENT(1), TEACHER(2), ADVISOR(9);
 
     UserType(int typeValue) {
-        this.value = typeValue;
+        this.value = String.valueOf(typeValue);
     }
 
-    private final int value;
+    private final String value;
 
-    public int getValue() {
+    public String getValue() {
         return this.value;
     }
 }
