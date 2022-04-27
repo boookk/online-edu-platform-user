@@ -97,6 +97,7 @@ public class UserHandler {
         final Mono<String> tokkens = user.map(mapper -> {
             System.out.println("++++++++++++" + mapper.getUserType());
             payloads.put("typ", mapper.getUserType());
+            payloads.put("id", mapper.getUserId());
             payloads.put("exp", date);
             // 토큰 Builder
             String jwt = "Bearer " + Jwts.builder()
