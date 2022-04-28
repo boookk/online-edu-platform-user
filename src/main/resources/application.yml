@@ -1,11 +1,12 @@
 server:
-  port: 0
+  port: 9098
+
 eureka:
   instance:
     instance-id: ${spring.application.name}:${random.value}
   client:
-    register-with-eureka: true
-    fetch-registry: true
+    register-with-eureka: false
+    fetch-registry: false
     service-url:
       defaultZone: http://127.0.0.1:8761/eureka
 
@@ -16,6 +17,18 @@ spring:
     url: r2dbc:h2:mem:///user
     username: sa
     password:
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: user-topic
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
 logging:
   level:
     org:

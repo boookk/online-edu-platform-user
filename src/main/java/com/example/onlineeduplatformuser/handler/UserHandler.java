@@ -6,6 +6,7 @@ import com.example.onlineeduplatformuser.dto.UserRegistrationResponse;
 import com.example.onlineeduplatformuser.model.User;
 import com.example.onlineeduplatformuser.model.UserType;
 import com.example.onlineeduplatformuser.repository.UserRepository;
+import com.example.onlineeduplatformuser.service.ProducerService;
 import com.example.onlineeduplatformuser.service.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -28,8 +29,6 @@ import java.security.Key;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
-import java.util.concurrent.atomic.AtomicReference;
 
 import static org.springframework.web.reactive.function.server.ServerResponse.ok;
 
@@ -42,6 +41,7 @@ public class UserHandler {
     private final UserService userService;
     private final UserRepository userRepository;
     private final ObjectMapper objectMapper;
+    private final ProducerService producerService;
 
     // 강사 등록
     public Mono<ServerResponse> register(ServerRequest request) {
@@ -58,9 +58,11 @@ public class UserHandler {
     // 학생 등록
     public Mono<ServerResponse> join(ServerRequest request) {
         Mono<UserDto> userDto = request.bodyToMono(UserDto.class).doOnNext(this::validate);
+
         return userDto
                 .flatMap(user -> {
                     user.setUserType(String.valueOf(UserType.USER));
+                    producerService.sendMessage(user.getEmail(), user.getPassword());
                     return ok().body(userRepository.save(objectMapper.convertValue(user, User.class)),
                             UserRegistrationResponse.class);
                 })
