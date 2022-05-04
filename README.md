@@ -1,3 +1,9 @@
+# online-edu-platform-user
+
+[online-edu-platform](https://github.com/radic2510/online-edu-platform)
+
+## 🔊 API
+
 ### USER
 
 <details>
@@ -83,3 +89,15 @@
 > | `expires_in` |  Integer  | 토큰 만료 시간     | O |
 
 </details>
+
+----
+<br>
+
+## ✨ Contributors
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/jeong-soo"><img src="https://avatars.githubusercontent.com/u/95576638?v=4?s=100" width="100px;" alt=""/><br /><sub><b>jeong-soo</b></sub></a><br /></td>
+        <td align="center"><a href="https://github.com/kjwjw95"><img src="https://avatars.githubusercontent.com/u/63347111?v=4?s=100" width="100px;" alt=""/><br /><sub><b>kjwjw95</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/boookk"><img src="https://avatars.githubusercontent.com/u/76933244?v=4?s=100" width="100px;" alt=""/><br /><sub><b>boookk</b></sub></a><br /></td>
+  </tr>
+</table>
